@@ -2,14 +2,20 @@ import './App.css';
 import config from './config'
 console.log(config)
 
-function App() {
+function Section() {
   return (
-    <div className="parent">
       <div className="section top"> 
         <div className="title">
           Licorice
         </div>
       </div>
+  )
+}
+
+function App() {
+  return (
+    <div className="parent">
+      <Section />
       <div className="section middle">
         <div className="description">
           A popular herbal ingridient in colds and flu teas

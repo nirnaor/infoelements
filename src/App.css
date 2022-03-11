@@ -2,30 +2,26 @@
   background: rgb(101,	156,	173);
   height: 290px;
   width: 300px;
+  color: white;
   display: grid;
 }
 
-.section {
-  color: white;
-}
-
-.aligner {
-  display: flex;
-}
-
+/* horizontalAlignment */
 .title {
-  justify-content: flex-start;
+  text-align: left;
 }
 .description {
-  justify-content: center;
+  text-align: center;
 }
 .custombutton {
-  justify-content: flex-end;
+  text-align: center;
+}
+.icons {
+  text-align: right;
 }
 
-.icons {
-  justify-content: flex-end;
-}
+/* custom info params */
+
 .icons a {
   color: white;
   text-decoration: none;

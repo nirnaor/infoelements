@@ -10,10 +10,12 @@ function Section(props) {
   )
 }
 
-function InfoTitle() {
+function InfoTitle(props) {
+  const data = config.internal[props.pathForData]
+  console.log(data)
   return (
         <div className="title">
-          Licorice
+          {data.text}
         </div>
   )
 }
@@ -47,15 +49,15 @@ function InfoCustomButton() {
 
 function createSection(orderList) {
   const CompsMap = {
-    Title: InfoTitle,
-    Description: InfoDescription,
-    Icons: InfoIcons,
-    CustomButton: InfoCustomButton
+    Title: {CompClass: InfoTitle, pathForData: 'titleParams'},
+    Description: {CompClass: InfoDescription, pathForData: 'descriptionParams'},
+    Icons: {CompClass: InfoIcons, pathForData: 'iconsParams'},
+    CustomButton: {CompClass: InfoCustomButton, pathForData: 'buttonParams'}
   }
   const InfoComponents = orderList.map(x => CompsMap[x])
-  return InfoComponents.map(Comp => (<Comp />))
-
+  return InfoComponents.map(x => (<x.CompClass pathForData={x.pathForData} />))
 }
+
 function createRealSection(sectionName) {
   const orderList = config.internal.order[sectionName]
   const rendererComps = createSection(orderList)

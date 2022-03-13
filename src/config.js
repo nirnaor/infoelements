@@ -9,6 +9,7 @@ const config = {
       Title: true
     },
     titleParams: {
+      text: 'Licorice',
       horizontalAlignment: "RIGHT",
       textVerticalPadding: 3,
       textHorizontalPadding: 5
@@ -42,6 +43,7 @@ const config = {
       CustomButton: true
     },
     titleParams: {
+      text: 'Licorice',
       horizontalAlignment: "RIGHT",
       textVerticalPadding: 3,
       textHorizontalPadding: 5

@@ -44,14 +44,26 @@ function InfoCustomButton() {
         </div>
   )
 }
+
+function createSection(orderList) {
+  const CompsMap = {
+    Title: InfoTitle,
+    Description: InfoDescription,
+    Icons: InfoIcons,
+    CustomButton: InfoCustomButton
+  }
+  const InfoComponents = orderList.map(x => CompsMap[x])
+  return InfoComponents.map(Comp => (<Comp />))
+
+}
 function App() {
+  const TopComps = createSection(config.internal.order.top)
   return (
     <div className="parent">
       <Section position='top'>
-        <InfoTitle />
+        {TopComps}
       </Section>
       <Section position='middle'>
-        <InfoDescription />
         <InfoIcons />
       </Section>
       <Section position='bottom'>

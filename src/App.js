@@ -56,19 +56,20 @@ function createSection(orderList) {
   return InfoComponents.map(Comp => (<Comp />))
 
 }
+function createRealSection(sectionName) {
+  const orderList = config.internal.order[sectionName]
+  const rendererComps = createSection(orderList)
+  return (
+      <Section position={sectionName}>
+        {rendererComps}
+      </Section>
+  )
+}
 function App() {
-  const TopComps = createSection(config.internal.order.top)
+  const sections = ['top', 'middle', 'bottom'].map(createRealSection)
   return (
     <div className="parent">
-      <Section position='top'>
-        {TopComps}
-      </Section>
-      <Section position='middle'>
-        <InfoIcons />
-      </Section>
-      <Section position='bottom'>
-        <InfoCustomButton />
-      </Section>
+      {sections}
     </div>
   );
 }

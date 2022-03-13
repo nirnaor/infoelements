@@ -15,11 +15,13 @@ const config = {
       textHorizontalPadding: 5
     },
     descriptionParams: {
+      text: "A popular herbal ingridient in colds and flu teas a widespread",
       horizontalAlignment: "LEFT",
       textVerticalPadding: 3,
       textHorizontalPadding: 5
     },
     buttonParams: {
+      buttonText: "Click Me",
       horizontalAlignment: "CENTER",
       borderWidth: 3,
       borderColor: "red"
@@ -37,7 +39,7 @@ const config = {
     order: {
       top: [],
       middle: ['Icons'],
-      bottom: ['CustomButton']
+      bottom: ['Title', 'CustomButton']
     },
     enabled: {
       CustomButton: true
@@ -54,6 +56,7 @@ const config = {
       textHorizontalPadding: 5
     },
     buttonParams: {
+      buttonText: "Other value",
       horizontalAlignment: "CENTER",
       borderWidth: 3,
       borderColor: "red"

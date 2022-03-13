@@ -17,11 +17,10 @@ function InfoTitle(props) {
   )
 }
 
-function InfoDescription() {
+function InfoDescription(props) {
   return (
         <div className="description">
-          A popular herbal ingridient in colds and flu teas
-          a widespread
+          {props.text}
         </div>
   )
 }
@@ -36,10 +35,10 @@ function InfoIcons() {
 }
 
 
-function InfoCustomButton() {
+function InfoCustomButton(props) {
   return (
         <div className="custombutton">
-          <input type="button" value="Button" />
+          <input type="button" value={props.buttonText}/>
         </div>
   )
 }

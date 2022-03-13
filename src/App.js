@@ -18,7 +18,7 @@ function InfoTitle() {
   )
 }
 
-function Description() {
+function InfoDescription() {
   return (
         <div className="description">
           A popular herbal ingridient in colds and flu teas
@@ -27,7 +27,7 @@ function Description() {
   )
 }
 
-function Icons() {
+function InfoIcons() {
   return (
         <div className="icons">
           <a href="#" className="fa fa-facebook"></a>
@@ -37,7 +37,7 @@ function Icons() {
 }
 
 
-function CustomButton() {
+function InfoCustomButton() {
   return (
         <div className="custombutton">
           <input type="button" value="Button" />
@@ -51,12 +51,11 @@ function App() {
         <InfoTitle />
       </Section>
       <Section position='middle'>
-        <Description />
-        <Icons />
+        <InfoDescription />
+        <InfoIcons />
       </Section>
-
       <Section position='bottom'>
-        <CustomButton />
+        <InfoCustomButton />
       </Section>
     </div>
   );

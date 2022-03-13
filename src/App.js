@@ -1,6 +1,5 @@
 import './App.css';
 import config from './config'
-console.log(config)
 
 function Section(props) {
   return (
@@ -11,11 +10,9 @@ function Section(props) {
 }
 
 function InfoTitle(props) {
-  const data = config.internal[props.pathForData]
-  console.log(data)
   return (
         <div className="title">
-          {data.text}
+          {props.text}
         </div>
   )
 }
@@ -47,33 +44,44 @@ function InfoCustomButton() {
   )
 }
 
-function createSection(orderList) {
+function createSection(orderList, masterInfoConfig) {
   const CompsMap = {
     Title: {CompClass: InfoTitle, pathForData: 'titleParams'},
     Description: {CompClass: InfoDescription, pathForData: 'descriptionParams'},
     Icons: {CompClass: InfoIcons, pathForData: 'iconsParams'},
     CustomButton: {CompClass: InfoCustomButton, pathForData: 'buttonParams'}
   }
-  const InfoComponents = orderList.map(x => CompsMap[x])
-  return InfoComponents.map(x => (<x.CompClass pathForData={x.pathForData} />))
+  return orderList
+    .map(x => CompsMap[x])
+    .map(x => (<x.CompClass key={x.pathForData}  {...masterInfoConfig[x.pathForData]} />))
 }
 
-function createRealSection(sectionName) {
-  const orderList = config.internal.order[sectionName]
-  const rendererComps = createSection(orderList)
+function createRealSection(sectionName, masterInfoConfig) {
+  const orderList = masterInfoConfig.order[sectionName]
+  const rendererComps = createSection(orderList, masterInfoConfig)
   return (
-      <Section position={sectionName}>
+      <Section key={sectionName} position={sectionName}>
         {rendererComps}
       </Section>
   )
 }
-function App() {
-  const sections = ['top', 'middle', 'bottom'].map(createRealSection)
+
+function createMasterInfo(masterInfoName) {
+  const masterInfoConfig = config[masterInfoName]
+  const sections =  ['top', 'middle', 'bottom'].map(x => createRealSection(x, masterInfoConfig))
   return (
-    <div className="parent">
+    <div key={masterInfoName} className="parent">
       {sections}
     </div>
   );
+}
+function App() {
+  const masterInfos = ['internal', 'external'].map(createMasterInfo)
+  return (
+    <div>
+      {masterInfos}
+    </div>
+  )
 }
 
 export default App;

@@ -36,7 +36,7 @@ const config = {
   external: {
     order: {
       top: [],
-      middle: [],
+      middle: ['Icons'],
       bottom: ['CustomButton']
     },
     enabled: {

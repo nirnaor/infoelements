@@ -37,9 +37,9 @@ const config = {
   },
   external: {
     order: {
-      top: [],
-      middle: ['Icons'],
-      bottom: ['Title', 'CustomButton']
+      top: ['Icons'],
+      middle: ['CustomButton'],
+      bottom: ['Title', 'Description']
     },
     enabled: {
       CustomButton: true
@@ -51,6 +51,7 @@ const config = {
       textHorizontalPadding: 5
     },
     descriptionParams: {
+      text: "EVEN OTHER DESCRIPTION IS POSSIBLE A popular herbal ingridient in colds and flu teas a widespread",
       horizontalAlignment: "LEFT",
       textVerticalPadding: 3,
       textHorizontalPadding: 5

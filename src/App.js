@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import './App.css';
 import config from './config'
 
@@ -48,7 +49,7 @@ function SingleInfo({InfoClass, infoParams}) {
 
   return (
     <div className={horizontalAlignmentClass}>
-      <InfoClass {...infoParams} />
+      <InfoClass {..._.omit(infoParams, 'propsForSingleInfo')} />
     </div>
   )
 }

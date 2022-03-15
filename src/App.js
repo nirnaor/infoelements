@@ -44,13 +44,20 @@ function InfoCustomButton(props) {
   )
 }
 
-function SingleInfo({InfoClass, infoParams}) {
-  const horizontalAlignmentClass = infoParams.horizontalAlignment.toLowerCase()
-
+function Aligner(props) {
+  const horizontalAlignmentClass = props.horizontalAlignment.toLowerCase()
   return (
     <div className={horizontalAlignmentClass}>
-      <InfoClass {..._.omit(infoParams, 'propsForSingleInfo')} />
+      {props.children}
     </div>
+  )
+}
+
+function SingleInfo({InfoClass, infoParams}) {
+  return (
+    <Aligner horizontalAlignment={infoParams.horizontalAlignment}>
+      <InfoClass {...infoParams} />
+    </Aligner>
   )
 }
 

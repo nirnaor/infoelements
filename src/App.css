@@ -7,17 +7,14 @@
   display: grid;
 }
 
-.title {
-  text-align: left;
-}
-.description {
-  text-align: center;
-}
-.custombutton {
-  text-align: center;
-}
-.icons {
+.right {
   text-align: right;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
 }
 
 /* custom info params */

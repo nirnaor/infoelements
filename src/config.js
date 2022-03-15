@@ -46,7 +46,7 @@ const config = {
     },
     titleParams: {
       text: 'Licorice',
-      horizontalAlignment: "RIGHT",
+      horizontalAlignment: "CENTER",
       textVerticalPadding: 3,
       textHorizontalPadding: 5
     },
@@ -58,7 +58,7 @@ const config = {
     },
     buttonParams: {
       buttonText: "Other value",
-      horizontalAlignment: "CENTER",
+      horizontalAlignment: "RIGHT",
       borderWidth: 3,
       borderColor: "red"
     },
@@ -68,7 +68,7 @@ const config = {
         social: true,
         heart: true
       },
-      horizontalAlignment: "SPLIT"
+      horizontalAlignment: "RIGHT"
     }
   },
   externalPlacement: "ABOVE_IMAGE"

@@ -43,6 +43,16 @@ function InfoCustomButton(props) {
   )
 }
 
+function SingleInfo({InfoClass, infoParams}) {
+  const horizontalAlignmentClass = infoParams.horizontalAlignment.toLowerCase()
+
+  return (
+    <div className={horizontalAlignmentClass}>
+      <InfoClass {...infoParams} />
+    </div>
+  )
+}
+
 function createSection(orderList, masterInfoConfig) {
   const CompsMap = {
     Title: {CompClass: InfoTitle, pathForData: 'titleParams'},
@@ -52,7 +62,7 @@ function createSection(orderList, masterInfoConfig) {
   }
   return orderList
     .map(x => CompsMap[x])
-    .map(x => (<x.CompClass key={x.pathForData}  {...masterInfoConfig[x.pathForData]} />))
+    .map(x => (<SingleInfo InfoClass={x.CompClass} key={x.pathForData}  infoParams={masterInfoConfig[x.pathForData]} />))
 }
 
 function createRealSection(sectionName, masterInfoConfig) {
